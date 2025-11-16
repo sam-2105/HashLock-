@@ -1,0 +1,17 @@
+## Suggested Improvements and Safe Checks
+
+1. Check hard-coded file paths and change to configurable paths (use argparse or config file).
+2. Avoid storing secret keys in repository; use environment variables.
+3. Add requirements.txt listing external packages (if any).
+4. Add unit tests for hashing and verification functions.
+5. Add logging instead of print statements; configure logging level.
+6. If the app opens network ports, mention security and binding to localhost.
+7. Consider packaging with a setup.py or using Docker for reproducible runs.
+
+### Quick code notes (from scanning files)
+
+- app.py: contains the words 'secret' or 'key' — review for embedded keys.
+- app.py: may expose a network service — ensure you're aware of host/port binding.
+- app.py: uses environment variables (good).
+- review3.py: contains the words 'secret' or 'key' — review for embedded keys.
+- review3.py: references baseline/hash files — ensure these files are not committed.
